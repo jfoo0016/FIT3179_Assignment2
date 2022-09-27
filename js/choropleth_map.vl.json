@@ -2,7 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
       "text": "Confrimed cases around the world (as of 14 May 2022)",
-      "subtitle": "Active, recovered and deaths in terms of total count"},
+      "subtitle": "Active, recovered and deaths in terms of total count"
+    },
     "width": 800,
     "height": 600,
     "data": {
@@ -11,6 +12,13 @@
     },
     "projection": {"type": "equalEarth"},
     "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+          "format": {"type": "topojson", "feature": "oceans"}
+        },
+        "mark": {"type": "geoshape", "fill": "skyblue"}
+      },
       {
         "transform": [
           {
