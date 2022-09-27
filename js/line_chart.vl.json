@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Daily COVID-19 cases and deaths in the world"
+      },
+    "width": 800,
+    "height": 600,
+    "data": {
+      "name": "table",
+      "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/data/worldometer_coronavirus_daily_data_cleaned.csv",
+      "format": {"type": "csv"}
+    },
+    "mark":{
+      "type": "line",
+      "point": false
+    },
+    "encoding": {
+      "x": {"field": "date", "type":"ordinal"},
+      "y": {"field": "daily_new_deaths", "type": "quantitative"}
+    }  
+  }
