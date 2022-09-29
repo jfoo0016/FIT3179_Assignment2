@@ -21,7 +21,7 @@
         {
           "field": "date",
           "type": "temporal",
-          "title": "time: "
+          "title": "date: "
         },
         {
           "field": "daily_new_deaths",
