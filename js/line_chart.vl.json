@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-      "text": "Daily COVID-19 cases and deaths in the world"
+      "text": "Daily COVID-19 deaths in the world"
       },
     "width": 800,
     "height": 600,
@@ -15,7 +15,7 @@
       "point": false
     },
     "encoding": {
-      "x": {"field": "date", "type":"ordinal"},
+      "x": {"field": "date", "type":"temporal", "axis":{"format": "%b %Y"}},
       "y": {"field": "daily_new_deaths", "type": "quantitative"}
     }  
   }
