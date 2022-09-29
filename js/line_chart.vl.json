@@ -16,6 +16,19 @@
     },
     "encoding": {
       "x": {"field": "date", "type":"temporal", "axis":{"format": "%b %Y"}},
-      "y": {"field": "daily_new_deaths", "type": "quantitative"}
+      "y": {"field": "daily_new_deaths", "type": "quantitative", "title": "daily new deaths"},
+      "tooltip": [
+        {
+          "field": "date",
+          "type": "temporal",
+          "title": "time: "
+        },
+        {
+          "field": "daily_new_deaths",
+          "type": "quantitative",
+          "title": "deaths: "
+        }
+      ]
+    
     }  
   }
