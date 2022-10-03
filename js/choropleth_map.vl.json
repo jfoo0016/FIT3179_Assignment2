@@ -62,24 +62,24 @@
           {"filter": "Country_selection == null || datum.country == Country_selection"},
           {
             "calculate": "floor(datum.total_confirmed / (datum.population / 1000000))",
-            "as": "total_confirmed"
+            "as": "total_confirmed_country"
           }
         ],
         "mark": {"type": "geoshape", "stroke": "white"},
         "encoding": {
           "color": {
-            "field": "total_confirmed",
+            "field": "total_confirmed_country",
             "type": "quantitative",
             "scale": {
               "type": "log",
-              "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+              "scheme": "goldred"
             },
             "title": "total confirmed cases"
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
             {
-              "field": "total_confirmed",
+              "field": "total_confirmed_country",
               "type": "quantitative",
               "title": "Total confirmed cases"
             }
