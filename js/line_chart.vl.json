@@ -1,34 +1,62 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Daily COVID-19 deaths in the world"
-      },
-    "width": 800,
-    "height": 600,
-    "data": {
-      "name": "table",
-      "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/data/worldometer_coronavirus_daily_data_cleaned.csv",
-      "format": {"type": "csv"}
-    },
-    "mark":{
-      "type": "line",
-      "point": false
-    },
-    "encoding": {
-      "x": {"field": "date", "type":"temporal", "axis":{"format": "%b %Y"}},
-      "y": {"field": "daily_new_deaths", "type": "quantitative", "title": "daily new deaths"},
-      "tooltip": [
-        {
-          "field": "date",
-          "type": "temporal",
-          "title": "Date"
-        },
-        {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Daily COVID-19 deaths in the world"},
+  "width": 900,
+  "height": 600,
+  "data": {
+    "name": "table",
+    "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/data/worldometer_coronavirus_daily_data_cleaned.csv",
+    "format": {"type": "csv"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "line", "point": false},
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "axis": {"format": "%b %Y"}},
+        "y": {
           "field": "daily_new_deaths",
           "type": "quantitative",
-          "title": "Deaths"
+          "title": "daily new deaths"
+        },
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Date"},
+          {
+            "field": "daily_new_deaths",
+            "type": "quantitative",
+            "title": "Deaths"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {"type": "rule", "strokeDash": [2, 2], "size": 2},
+      "encoding": {
+        "y":{
+          "field": "daily_new_deaths",
+          "aggregate": "mean"
+        },
+        "color":{"value": "red"}
+      }
+    },
+    {
+      "mark":{
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": 970,
+          "dy": -12,
+          "fontSize": 13,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"value": "Average daily deaths"},
+          "x": {"value": 0},
+          "y": {
+            "field": "daily_new_deaths",
+            "aggregate": "mean"
+          }
         }
-      ]
-    
-    }  
-  }
+
+    }
+  ]
+}
