@@ -85,6 +85,33 @@
             }
           ]
         }
+      },
+      {
+        "mark":{
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 13,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "properties.NAME", "type": "nominal"},
+          "longitude":{
+            "field": "properties.LABEL_X", "type":"quantitative"
+          },
+          "latitude":{
+            "field": "properties.LABEL_Y", "type": "quantitative"
+          },
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['properties.NAME'] == 'China' || datum['properties.NAME'] == 'Canada' || datum['properties.NAME'] == 'Antarctica' || datum['properties.NAME'] == 'Australia'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
       }
     ],
     "config": {}
