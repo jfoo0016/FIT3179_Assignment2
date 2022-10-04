@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Percentage of fully vaccinated",
+    "text": "Top 20 countries in percentage of fully vaccinated population",
     "subtitle": "Percentage of total population that have been fully vaccinated"
   },
   "width": 800,
@@ -22,7 +22,7 @@
       {
         "field": "percentage_fully_vaccinated",
         "type": "quantitative",
-        "title": "Percentage of fully vaccinated"
+        "title": "Percentage of fully vaccinated population"
       }
     ]
   }
