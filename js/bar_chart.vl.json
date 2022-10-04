@@ -17,12 +17,12 @@
       {
         "field": "country",
         "type": "nominal",
-        "title": "Country: "
+        "title": "Country"
       },
       {
         "field": "percentage_fully_vaccinated",
         "type": "quantitative",
-        "title": "Percentage of fully vaccinated: "
+        "title": "Percentage of fully vaccinated"
       }
     ]
   }
