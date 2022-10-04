@@ -91,7 +91,7 @@
           "type": "text",
           "align": "right",
           "baseline": "middle",
-          "dx": -12,
+          "dx": 0,
           "fontSize": 13,
           "fontStyle": "italic"
         },
