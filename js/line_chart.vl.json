@@ -21,12 +21,12 @@
         {
           "field": "date",
           "type": "temporal",
-          "title": "date: "
+          "title": "date"
         },
         {
           "field": "daily_new_deaths",
           "type": "quantitative",
-          "title": "deaths: "
+          "title": "deaths"
         }
       ]
     
