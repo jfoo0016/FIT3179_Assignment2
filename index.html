@@ -9,22 +9,70 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
 
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 </head>
 
 <body>
-    <h1>COVID-19 Dashboard</h1>
 
-    <!-- Container for the visualisation -->
-    <!-- <div id="choropleth_map"></div> -->
+    <div class="page">
 
-    <!-- <div id="line_chart"></div> -->
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <h1>COVID-19 Dashboard</h1>
+                <p>An analysis of the global pandemic.</p>
+            </div>
+        </div>
 
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1 ">
+                <h2>COVID-19 is real</h2>
+                <p>To the anti-vaxxers, fuck you :)</p>
+            </div>
+            <div class="pure-u-1-1 ">
+                <div id="choropleth_map" class="vis-container"></div>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+        
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+              <div class="description description-left">
+                <h2>Lives stolen by the virus</h2>
+                <p>COVID-19 is lethal, almost as deadly as your mum.</p>
+              </div>
 
-    <div id="combine"></div>
-    <div id="bar_chart"></div> 
+              <div id="line_chart" class="vis-container"></div>
+            </div>
 
+            <div class="pure-u-1-2">
+                <div class="description description-left">
+                    <h2>Vaccine saves lives</h2>
+                    <p>I thought people didn't want to get vaccinated?</p>
+                  </div>
+              <div id="bar_chart" class="vis-container"></div>
+            </div>
+          </div>
+
+        <!-- end pure grid group -->
+
+    </div>
+        
+
+    
 
     <script src="js/main.js"></script>
 </body>

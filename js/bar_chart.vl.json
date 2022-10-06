@@ -4,8 +4,8 @@
     "text": "Top 10 countries in percentage of fully vaccinated population",
     "subtitle": "Percentage of total population that have been fully vaccinated"
   },
-  "width": 800,
-  "height": 600,
+  "width": "container",
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/data/summary_and_vaccine_data.csv"
   },

@@ -4,8 +4,8 @@
     "text": "Confrimed cases around the world (as of 14 May 2022)",
     "subtitle": "Active, recovered and deaths in terms of total count"
   },
-  "width": 800,
-  "height": 600,
+  "width": "container",
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/js/ne_110m.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -23,7 +23,7 @@
     },
     {
       "name": "zoom_level",
-      "value": 140,
+      "value": 150,
       "bind": {
         "input": "range",
         "min": 100,
