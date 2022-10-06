@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "Distribution of confirmed cases by continent"},
+    "width": "container",
+    "data": {
+        "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/data/coronavirus_summary_grouped.csv"
+    },
+    "encoding": {
+        "theta": {
+          "field": "total_confirmed",
+          "type": "quantitative",
+          "stack": true
+        },
+        "color": {"field": "continent", "type": "nominal", "legend": null},
+        "tooltip": [
+          {"field": "continent", "type": "nominal", "title": "Continent"},
+          {
+            "field": "total_confirmed",
+            "type": "quantitative",
+            "title": "Confirmed cases"
+          }
+        ]
+      },
+    "layer": [
+        {"mark": {"type": "arc", "innerRadius": 150}},
+        {
+            "mark": {"type": "text", "radius": 200},
+            "encoding": {"text": {"field": "continent", "type": "nominal"}}
+        },
+        {
+            "data": {
+            "values": [
+                {"x": 0, "y": 0, "img": "data/covid.png"}
+            ]
+            },
+            "mark": {"type": "image", "width": 200, "height": 200, "stroke": null},
+            "encoding": {
+            "x": {"field": "x", "type": "quantitative", "axis": null},
+            "y": {"field": "y", "type": "quantitative", "axis": null},
+            "url": {"field": "img", "type": "nominal"},
+            "tooltip": []
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+         }
+    }
+}

@@ -14,6 +14,6 @@ vegaEmbed('#bar_chart', spec3, {"actions": false}).then(function(result) {
 }).catch(console.error);
 
 var spec4 = "js/donut_chart.vl.json";
-vegaEmbed('#combine', spec4, {"actions": false}).then(function(result) {
+vegaEmbed('#donut_chart', spec4, {"actions": false}).then(function(result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
