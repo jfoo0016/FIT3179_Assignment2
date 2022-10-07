@@ -18,6 +18,12 @@
             "field": "total_confirmed",
             "type": "quantitative",
             "title": "Confirmed cases"
+          },
+          {
+            "field": "percentage_total_confirmed",
+            "type": "quantitative",
+            "title": "Percentage",
+            "format": ".2f"
           }
         ]
       },
