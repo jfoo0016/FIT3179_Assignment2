@@ -383,9 +383,9 @@
       }
     }
   ],
-  "hconcat": [
+  "vconcat": [
     {
-      "width": 900,
+      "width": 1200,
       "height": 600,
       "title": {
         "text": "Confirmed cases around the world",
@@ -466,8 +466,8 @@
               "field": "total_confirmed_country",
               "type": "quantitative",
               "scale": {"type": "log", "scheme": "goldred"},
-              "title": "total confirmed cases",
-              "legend": {"orient": "bottom"}
+              "title": "confirmed cases/1 million population",
+              "legend": {"orient": "right"}
             },
             "tooltip": [
               {"field": "country", "type": "nominal", "title": "Country"},
@@ -513,54 +513,114 @@
       ]
     },
     {
-      "width": 900,
-      "height": 600,
-      "title": {"text": "Distribution of confirmed cases by continent"},
-      "data": {
-        "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/data/coronavirus_summary_grouped.csv"
-      },
-      "encoding": {
-        "theta": {
-          "field": "total_confirmed",
-          "type": "quantitative",
-          "stack": true
-        },
-        "color": {"field": "continent", "type": "nominal", "legend": null},
-        "tooltip": [
-          {"field": "continent", "type": "nominal", "title": "Continent"},
-          {
-            "field": "total_confirmed",
-            "type": "quantitative",
-            "title": "Confirmed cases"
-          }
-        ]
-      },
-      "layer": [
-        {"mark": {"type": "arc", "innerRadius": 150}},
+      "hconcat": [
         {
-          "mark": {"type": "text", "radius": 350},
-          "encoding": {"text": {"field": "continent", "type": "nominal"}}
-        },
-        {
-          "data": {
-            "values": [
-              {"x": 0, "y": 0, "img": "data/covid.png"}
-            ]
-          },
-          "mark": {"type": "image", "width": 200, "height": 200, "stroke": null},
-          "encoding": {
-            "x": {"field": "x", "type": "quantitative", "axis": null},
-            "y": {"field": "y", "type": "quantitative", "axis": null},
-            "url": {"field": "img", "type": "nominal"},
-            "tooltip": []
-          }
+          "vconcat": [
+            {
+              "title": "Daily active cases",
+              "width": 400,
+              "height": 300,
+              "layer": [
+                {
+                  "mark": {"type": "line", "point": true},
+                  "transform": [{"filter": "Country_selection == null || datum.country == Country_selection"}],
+                  "encoding": {
+                    "x": {
+                      "field": "date",
+                      "type": "temporal",
+                      "scale": {"domain": {"param": "brush"}},
+                      "axis": {"title": "Date", "format": "%b %Y"}
+                    },
+                    "y": {
+                      "field": "daily_new_cases",
+                      "type": "quantitative",
+                      "title": "Daily active cases"
+                    },
+                    "tooltip": [
+                      {"field": "date", "type": "temporal", "title": "Date"},
+                      {
+                        "field": "daily_new_cases",
+                        "type": "quantitative",
+                        "title": "Daily new cases"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "mark": {"type": "rule", "strokeDash": [2, 2], "size": 2},
+                  "transform": [{"filter": "Country_selection == null || datum.country == Country_selection"}],
+                  "encoding": {
+                    "y": {"field": "daily_new_cases", "aggregate": "mean"},
+                    "color": {"value": "red"}
+                  }
+                },
+                {
+                  "mark": {
+                    "type": "text",
+                    "align": "center",
+                    "baseline": "middle",
+                    "dx": 40,
+                    "dy": -30,
+                    "fontSize": 13,
+                    "fontStyle": "italic"
+                  },
+                  "transform": [{"filter": "Country_selection == null || datum.country == Country_selection"}],
+                  "encoding": {
+                    "text": {"value": ["Average"]},
+                    "x": {"value": 0},
+                    "y": {"field": "daily_new_cases", "aggregate": "mean"}
+                  }
+                },
+                {
+                  "mark": {
+                      "type": "text",
+                      "align": "right",
+                      "baseline": "bottom",
+                      "x": "width",
+                      "y": 0
+                  },
+                  "encoding": {
+                    "text": {
+                      "condition": {
+                        "test": "!isDefined(Country_selection)",
+                        "value": "ALL COUNTRIES"
+                      },
+                      "value": {"expr": "Country_selection"}
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "width": 400,
+              "height": 100,
+              "title": "Use this line chart to filter data based on date",
+              "mark": "area",
+              "params": [
+                {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+              ],
+              "transform": [{"filter": "Country_selection == null || datum.country == Country_selection"}],
+              "encoding": {
+                "x": {"field": "date", "type": "temporal", "axis": {"format": "%b %Y"}},
+                "y": {
+                  "field": "daily_new_cases",
+                  "type": "quantitative",
+                  "axis": {"grid": false, "title": "Daily active cases"}
+                },
+                "tooltip": [
+                  {"field": "date", "type": "temporal", "title": "Date"},
+                  {
+                    "field": "daily_new_cases",
+                    "type": "quantitative",
+                    "title": "Daily active cases"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     }
   ],
-  "config": {
-    "view": {
-      "stroke": "transparent"
-   }
-  }
+  "config": {}
 }
