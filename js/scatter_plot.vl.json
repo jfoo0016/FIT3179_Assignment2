@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 400,
+  "title": "Total tests against fully vaccinated",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/data/scatter_plot_data.csv"
+  },
+  "params": [
+    {
+      "name": "continent_highlight",
+      "select": {"type": "point", "fields": ["continent"]},
+      "bind": "legend"
+    }
+  ],
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "people_fully_vaccinated_per_hundred",
+      "type": "quantitative",
+      "title": "fully vaccinated / one hundred population"
+    },
+    "y": {
+      "field": "total_tests_per_hundred",
+      "type": "quantitative",
+      "title": "total tests / one hundred population"
+    },
+    "color": {"field": "continent", "type": "nominal", "title": "Continent"},
+    "opacity": {
+      "condition": {"param": "continent_highlight", "value": 0.6},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "country", "type": "nominal"},
+      {
+        "field": "people_fully_vaccinated_per_hundred",
+        "type": "quantitative",
+        "format": ".2f"
+      },
+      {
+        "field": "total_tests_per_hundred",
+        "type": "quantitative",
+        "format": ".2f"
+      }
+    ]
+  }
+}

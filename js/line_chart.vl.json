@@ -10,7 +10,7 @@
       "height": 300,
       "layer": [
         {
-          "mark": {"type": "line", "point": true},
+          "mark": {"type": "line", "point": false},
           "encoding": {
             "x": {
               "field": "date",
@@ -45,13 +45,13 @@
             "type": "text",
             "align": "center",
             "baseline": "middle",
-            "dx": 40,
+            "dx": 45,
             "dy": -30,
             "fontSize": 13,
             "fontStyle": "italic"
           },
           "encoding": {
-            "text": {"value": ["Average", "daily deaths"]},
+            "text": {"value": ["Global average", "daily deaths"]},
             "x": {"value": 0},
             "y": {"field": "daily_new_deaths", "aggregate": "mean"}
           }
@@ -62,7 +62,7 @@
       "width": "container",
       "height": 100,
       "title": "Use this line chart to filter data based on date",
-      "mark": "area",
+      "mark": "line",
       "params": [
         {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
       ],

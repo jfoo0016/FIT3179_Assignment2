@@ -19,7 +19,7 @@ vegaEmbed('#donut_chart', spec4, {"actions": false}).then(function(result) {
 }).catch(console.error);
 
 
-var spec5 = "js/test.vl.json";
-vegaEmbed('#test', spec5, {"actions": false}).then(function(result) {
+var spec5 = "js/scatter_plot.vl.json";
+vegaEmbed('#scatter_plot', spec5, {"actions": false}).then(function(result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
