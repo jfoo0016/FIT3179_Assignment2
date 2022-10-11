@@ -13,7 +13,7 @@
     {
       "mark": {"type": "bar", "width": {"band": 0.15}},
       "encoding": {
-        "x": {"field": "country", "type": "nominal", "axis": {"labelAngle": 0}, "sort":null},
+        "x": {"field": "country", "type": "nominal", "axis": {"labelAngle": 0, "labelOverlap": true}, "sort":null},
         "y": {"field": "percentage_fully_vaccinated", "type": "quantitative"},
         "tooltip": [
           {
