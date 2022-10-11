@@ -6,7 +6,7 @@
   "vconcat": [
     {
       "title": "Daily COVID-19 deaths in the world",
-      "width": "container", 
+      "width": 500, 
       "height": 300,
       "layer": [
         {
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "width": "container",
+      "width": 500,
       "height": 100,
       "title": "Use this line chart to filter data based on date",
       "mark": "line",
