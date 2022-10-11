@@ -53,7 +53,12 @@
           "encoding": {
             "text": {"value": ["Global average", "daily deaths"]},
             "x": {"value": 0},
-            "y": {"field": "daily_new_deaths", "aggregate": "mean"}
+            "y": {"field": "daily_new_deaths", "aggregate": "mean"},
+            "tooltip": [
+              {
+                "field": "daily_new_deaths", "aggregate": "mean", "title": "Global average", "format": ".2f"
+              }
+            ]
           }
         }
       ]
