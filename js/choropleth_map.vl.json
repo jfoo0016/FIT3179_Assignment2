@@ -474,7 +474,7 @@
           "field": "total_confirmed_country",
           "type": "quantitative",
           "scale": {"type": "log", "scheme": "goldred"},
-          "title": "total confirmed cases"
+          "title": ["Confirmed cases/", "1 million population"]
         },
         "fillOpacity": {
           "condition": {"param": "select", "value": 1},
@@ -492,7 +492,7 @@
           {
             "field": "total_confirmed_country",
             "type": "quantitative",
-            "title": "Total confirmed cases"
+            "title": ["Confirmed cases/1 million population"]
           }
         ]
       }
