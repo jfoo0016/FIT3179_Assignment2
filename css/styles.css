@@ -6,6 +6,7 @@ body *{
 
 h1 {
     font-weight: 900;
+    font-size: 70px;
 }
 
 body {
@@ -106,7 +107,7 @@ h1 {
 }
 
 .card:hover .face.face2 {
-    height: 20px;
+    height: 10px;
 }
 
 .card:nth-child(1) .face.face2 {

@@ -28,9 +28,9 @@
         ]
       },
     "layer": [
-        {"mark": {"type": "arc", "innerRadius": 150}},
+        {"mark": {"type": "arc", "innerRadius": 60, "outerRadius": 165}},
         {
-            "mark": {"type": "text", "radius": 200},
+            "mark": {"type": "text", "radius": 205},
             "encoding": {"text": {"field": "continent", "type": "nominal"}}
         },
         {
@@ -39,7 +39,7 @@
                 {"x": 0, "y": 0, "img": "data/covid.png"}
             ]
             },
-            "mark": {"type": "image", "width": 200, "height": 200, "stroke": null},
+            "mark": {"type": "image", "width": 120, "height": 120, "stroke": null, "opacity": 0.9},
             "encoding": {
             "x": {"field": "x", "type": "quantitative", "axis": null},
             "y": {"field": "y", "type": "quantitative", "axis": null},
