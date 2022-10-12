@@ -1,8 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Top 10 countries in percentage of fully vaccinated population",
-    "subtitle": "Percentage of total population that have been fully vaccinated"
+    "text": "Top 10 countries in fully vaccinated population  "
   },
   "width": "container",
   "height": 400,
@@ -11,10 +10,41 @@
   },
   "layer": [
     {
-      "mark": {"type": "bar", "width": {"band": 0.15}},
+      "mark": {
+        "type": "bar",
+        "height": {
+          "band": 0.20
+        },
+        "yOffset": 5
+      },
       "encoding": {
-        "x": {"field": "country", "type": "nominal", "axis": {"labelAngle": 0, "labelOverlap": true}, "sort":null},
-        "y": {"field": "percentage_fully_vaccinated", "type": "quantitative"},
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {"padding": 0},
+          "axis": {
+            "grid": true,
+            "bandPosition": 0,
+            "ticks": false,
+            "labelAngle": 0,
+            "labelOverlap": true,
+            "labelAlign": "left",
+            "labelBaseline": "middle",
+            "labelPadding": -5,
+            "labelOffset": -15,
+            "titleX": 5,
+            "titleY": -5,
+            "titleAngle": 0,
+            "titleAlign": "left"
+          },
+          "sort": null
+        },
+        "x": {
+          "field": "percentage_fully_vaccinated",
+          "type": "quantitative",
+          "title": "fully vaccinated population (%)",
+          "axis": {"grid": false}
+        },
         "tooltip": [
           {
             "field": "country",
@@ -24,16 +54,28 @@
           {
             "field": "percentage_fully_vaccinated",
             "type": "quantitative",
-            "title": "Percentage of fully vaccinated population"
+            "title": "Percentage of fully vaccinated population (%)"
           }
         ]
       }
     },
     {
-      "mark": {"type": "circle", "size": 600, "opacity": 1},
+      "mark": {
+        "type": "circle",
+        "size": 500,
+        "opacity": 1,
+        "yOffset": 5
+      },
       "encoding": {
-        "x": {"field": "country", "type": "nominal", "sort": null},
-        "y": {"field": "percentage_fully_vaccinated", "type": "quantitative"},
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": null
+        },
+        "x": {
+          "field": "percentage_fully_vaccinated",
+          "type": "quantitative"
+        },
         "tooltip": [
           {
             "field": "country",
@@ -49,5 +91,4 @@
       }
     }
   ]
-
 }
