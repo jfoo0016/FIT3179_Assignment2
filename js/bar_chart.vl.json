@@ -86,7 +86,7 @@
           {
             "field": "percentage_fully_vaccinated",
             "type": "quantitative",
-            "title": "Percentage of fully vaccinated population"
+            "title": "Percentage of fully vaccinated population (%)"
           }
         ]
       }
