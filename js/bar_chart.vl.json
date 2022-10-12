@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Top 10 countries in fully vaccinated population  "
+    "text": "Top 10 countries in fully vaccinated population  ",
+    "fontSize": 15
   },
   "width": "container",
   "height": 400,
@@ -62,7 +63,7 @@
     {
       "mark": {
         "type": "circle",
-        "size": 500,
+        "size": 300,
         "opacity": 1,
         "yOffset": 5
       },

@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text": "Distribution of confirmed cases by continent"},
+    "title": {"text": "Distribution of confirmed cases by continent", "fontSize": 15},
     "width": "container",
     "data": {
         "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/data/coronavirus_summary_grouped.csv"

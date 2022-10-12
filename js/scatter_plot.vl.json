@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 400,
-  "title": "Total tests against fully vaccinated",
+  "title": {"text": "Total tests against fully vaccinated", "fontSize": 15},
   "data": {
     "url": "https://raw.githubusercontent.com/jfoo0016/FIT3179_Assignment2/main/data/scatter_plot_data.csv"
   },

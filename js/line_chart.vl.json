@@ -5,7 +5,7 @@
   },
   "vconcat": [
     {
-      "title": "Daily COVID-19 deaths in the world",
+      "title": {"text": "Daily COVID-19 deaths in the world", "fontSize": 15},
       "width": 500, 
       "height": 300,
       "layer": [
