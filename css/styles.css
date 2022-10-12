@@ -67,12 +67,11 @@ h1 {
 
 .card {
     position: relative;
-    width: 300px;
-    height: 400px;
+    width: auto ;
+    height: 250px;
     margin: 0 auto;
     background: #000;
     border-radius: 15px;
-    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
 }
 
 .face {
@@ -107,7 +106,7 @@ h1 {
 }
 
 .card:hover .face.face2 {
-    height: 60px;
+    height: 20px;
 }
 
 .card:nth-child(1) .face.face2 {
